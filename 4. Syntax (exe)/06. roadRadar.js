@@ -8,7 +8,7 @@ function roadRadar(speed, place) {
                 if (overSpeed <= 20) {
                     console.log(`The speed is ${overSpeed} km/h faster than the allowed speed of 130 - speeding`);
                 } else if (overSpeed <= 40) {
-                    console.log(`The speed is ${overSpeed} km/h faster than the allowed speed of 130 - excessive speedin`);
+                    console.log(`The speed is ${overSpeed} km/h faster than the allowed speed of 130 - excessive speeding`);
                 } else {
                     console.log(`The speed is ${overSpeed} km/h faster than the allowed speed of 130 - reckless drivin`);
                 }
