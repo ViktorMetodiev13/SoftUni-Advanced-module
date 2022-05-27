@@ -1,20 +1,26 @@
 function addAndRemove(arr) {
-    let resultArr = [1];
+    let newArr = [];
+    let num = 0;
     for (let index = 0; index < arr.length; index++) {
-        if (index == arr.length) {
-            resultArr.push(index);
-        }
-        else {
-            resultArr.push(index + 2);
-        }
-        if (arr[index] == 'remove') {
-            resultArr.pop();
+        num++;
+        let command = arr[index];
+        if (command == "add") {
+            newArr.push(num);
+        } else if (command == 'remove') {
+            newArr.pop();
         }
     }
-    console.log(resultArr.join('\n'));
+    
+    if (newArr.length == 0) {
+        console.log('Empty');
+    } else {
+        console.log(newArr.join('\n'));
+    }
 }
 addAndRemove(['add',
     'add',
     'add',
     'add'
 ]);
+console.log('------------------------');
+addAndRemove(['add', 'add', 'remove', 'add', 'add'])
