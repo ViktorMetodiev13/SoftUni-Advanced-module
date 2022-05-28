@@ -2,7 +2,7 @@ function townPopulation(arr) {
     let result = {};
 
     for (let line of arr) {
-        let [townName, townPopulation] = line.split('<->');
+        let [townName, townPopulation] = line.split(' <-> ');
 
         if (result.hasOwnProperty(townName) == false) {
             result[townName] = Number(townPopulation);
@@ -12,7 +12,7 @@ function townPopulation(arr) {
     }
 
     for (let key in result) {
-        console.log(key + `: ${result[key]}`);
+        console.log(key + ` : ${result[key]}`);
     }
 }
 townPopulation(['Sofia <-> 1200000',
