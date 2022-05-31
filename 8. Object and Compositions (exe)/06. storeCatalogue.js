@@ -22,9 +22,7 @@ function storeCatalogue(inputArr) {
         for (let product of sortedProducts) {
             console.log(`  ${product}: ${obj[letter][product]}`);
         }
-    }
-
-    
+    } 
 }
 storeCatalogue(['Appricot : 20.4',
     'Fridge : 1500',
