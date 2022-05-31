@@ -1,11 +1,11 @@
 function townsToJSON(arr) {
-    let result = {};
+    let result = [];
 
     class Town {
-        constructor(name, latitude, longtitude) {
+        constructor(name, latitude, longitude) {
             this.Town = name;
             this.Latitude = Number(latitude);
-            this.Longtitude = Number(longtitude);
+            this.Longitude = Number(longitude);
         }
     }
 
@@ -13,9 +13,12 @@ function townsToJSON(arr) {
         let array = arr[index].split('|').filter(x => x.length > 0).map(x => x.trim());
         let townName = array[0];
         let latitude = Number(array[1]).toFixed(2);
-        let longtitude = Number(array[2]).toFixed(2);
-        console.log(longtitude);
+        let longitude = Number(array[2]).toFixed(2);
+        let town = new Town(townName, latitude, longitude);
+        result.push(town)
     }
+
+    return JSON.stringify(result);
 }
 townsToJSON(['| Town | Latitude | Longitude |',
     '| Sofia | 42.696552 | 23.32601 |',
