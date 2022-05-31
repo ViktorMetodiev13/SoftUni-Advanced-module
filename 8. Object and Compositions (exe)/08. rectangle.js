@@ -3,7 +3,8 @@ function rectangle(width, height, color) {
         constructor(width, height, color) {
             this.width = width;
             this.height = height;
-            this.color = color[0].toUpperCase() + color.slice(1);
+            let toUpper = color[0].toUpperCase() + color.slice(1)
+            this.color = toUpper;
         }
         calcArea() {
             return this.height * this.width;
