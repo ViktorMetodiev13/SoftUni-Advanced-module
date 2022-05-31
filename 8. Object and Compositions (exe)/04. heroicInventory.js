@@ -1,10 +1,9 @@
 function heroicInventory(inputArr) {
     let result = [];
     for (let data of inputArr) {
-        let tokens = data.split(' / ');
-        let name = tokens[0];
-        let level = Number(tokens[1]);
-        let items = tokens[2].split(', ');
+        let [name, level, items] = data.split(' / ');
+        level = Number(level);
+        items = items ? items.split(', ') : [];
 
         result.push({name, level, items});
     }
