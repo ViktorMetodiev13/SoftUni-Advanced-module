@@ -11,7 +11,7 @@ function lowestPrice(arr) {
                 price
             }
         } else {
-            if (price <= result[product].price) {
+            if (price < result[product].price) {
                 result[product] = {
                     town,
                     price
