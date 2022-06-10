@@ -4,5 +4,5 @@ function addItem() {
     li.appendChild(document.createTextNode(input));
     document.getElementById('items').appendChild(li);
 
-    // document.getElementById('newItemText').value = '';
+    document.getElementById('newItemText').value = '';
 }
