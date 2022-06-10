@@ -5,10 +5,11 @@ function deleteByEmail() {
     let isFound = false;
     for (let row of rows) {
         if (row.children[1].textContent == value) {
-            row.remove();
+            const parent = row.parentElement;
+            parent.removeChild(row);
             isFound = true;
         }
     }
 
-    document.getElementById('result').textContent = isFound ? 'Deleted.' : 'Not Found.';
+    document.getElementById('result').textContent = isFound ? 'Deleted.' : 'Not found.';
 }
