@@ -1,8 +1,9 @@
 function addItem() {
-    let input = document.getElementById('newItemText').value;
+    let inputElement = document.getElementById('newItemText');
+    let ulElement = document.getElementById('items');
     let liElement = document.createElement('li');
-    liElement.textContent = input;
-    document.getElementById('items').appendChild(liElement);
+    liElement.textContent = inputElement.value;
+    ulElement.appendChild(liElement);
 
     let deleteBtn = document.createElement('a');
     deleteBtn.textContent = '[Delete]';
@@ -15,5 +16,5 @@ function addItem() {
         event.target.parentElement.remove();
     }
 
-    document.getElementById('newItemText').value = '';
+    inputElement.value = '';
 }

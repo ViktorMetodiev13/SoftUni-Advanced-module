@@ -1,10 +1,10 @@
 function addItem() {
-    let input = document.getElementById('newItemText').value;
-    let li = document.createElement('li');
+    let inputField = document.getElementById('newItemText');
     
-    li.textContent = input;
-    let ul = document.getElementById('items');
-    ul.appendChild(li);
+    let ulElement = document.getElementById('items');
+    let liElement = document.createElement('li');
+    liElement.textContent = inputField.value;
+    ulElement.appendChild(liElement);
 
-    document.getElementById('newItemText').value = '';
+    inputField.value = '';
 }
