@@ -1,2 +1,15 @@
-let result = 6 ** 3;
-console.log(result);
+function attachGradientEvents() {
+    Array.from(document.querySelectorAll('input'))
+    .forEach(i => {
+        i.addEventListener('focus', onFocus)
+        i.addEventListener('blur', onBlur)
+    });
+
+    function onFocus(event) {
+        event.target.parentElement.className = 'focused';
+    }
+
+    function onBlur(event) {
+        event.target.parentElement.className = '';
+    }
+}
