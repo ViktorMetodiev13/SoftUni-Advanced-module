@@ -7,12 +7,12 @@ function create(words) {
       p.textContent = word;
       p.style.display = 'none';
       div.appendChild(p);
-
+      
       div.addEventListener('click', reveal);
       content.appendChild(div);
-
+      
       function reveal(event) {
-         event.currentTarget.children[0].style.display = '';
+         event.target.children[0].style.display = '';
       }
    }
 }
