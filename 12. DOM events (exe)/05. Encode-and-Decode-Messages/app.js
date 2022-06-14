@@ -21,7 +21,6 @@ function encodeAndDecodeMessages() {
         for (let index = 0; index < input.length; index++) {
             decodedMessage += String.fromCharCode(input[index].charCodeAt(0) - 1);
         }
-        textAreas[0].value = decodedMessage;
-        textAreas[1].value = '';
+        textAreas[1].value = decodedMessage;
     }
 }
