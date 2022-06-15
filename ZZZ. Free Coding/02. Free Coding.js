@@ -1,10 +1,8 @@
-let myArr = [10, 20, 30, 40];
-
-let result = myArr.reduce(reducer, 0);
-
-console.log(result);
-
-function reducer(accumulator, value) {
-    console.log('acc:', accumulator, '+ val:', value);
-    return accumulator + value;
+let rations = {
+    day: 1,
+    hours: 24,
+    minutes: 1440,
+    seconds: 86400
 }
+
+console.log(rations.hours);

@@ -1,15 +1,21 @@
-function attachGradientEvents() {
-    Array.from(document.querySelectorAll('input'))
-    .forEach(i => {
-        i.addEventListener('focus', onFocus)
-        i.addEventListener('blur', onBlur)
-    });
+function lockedProfile() {
+    Array.from(document.querySelectorAll('.profile button'))
+        .forEach(b => b.addEventListener('click', toggle));
 
-    function onFocus(event) {
-        event.target.parentElement.className = 'focused';
-    }
+    function toggle(event) {
+        const profile = event.target.parentElement;
+        const isActive = document.querySelector('input[type="radio"][value="unlock"]').checked;
 
-    function onBlur(event) {
-        event.target.parentElement.className = '';
+        if (isActive) {
+            let div = profile.querySelector('div');
+
+            if (event.target.textContent == 'Show more') {
+                event.target.textContent = 'Hide it';
+                div.style.display = 'block';
+            } else {
+                event.target.textContent = 'Show more';
+                div.style.display = '';
+            }
+        }
     }
 }
