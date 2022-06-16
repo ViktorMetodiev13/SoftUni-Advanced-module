@@ -6,7 +6,8 @@ function processOddPositions(arr) {
         }
     }
 
-    let doubledAndReversed = resultArr.map(x => x * 2).reverse();
-    console.log(doubledAndReversed);
+    let finalResult = resultArr.map(x => x * 2).reverse();
+    console.log(finalResult);
 }
 processOddPositions([10, 15, 20, 25]);
+
