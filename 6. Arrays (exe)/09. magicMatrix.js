@@ -20,6 +20,6 @@ function magicMatrix(matrix) {
     return isMagical;
 }
 console.log(magicMatrix([[4, 5, 6],
-[3, 5, 4],
+[6, 5, 4],
 [5, 5, 5]
 ]));
