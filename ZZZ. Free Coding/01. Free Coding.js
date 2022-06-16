@@ -19,3 +19,8 @@ function lockedProfile() {
         }
     }
 }
+
+const obj = { 
+    name: Victor,
+    age: 18
+}
