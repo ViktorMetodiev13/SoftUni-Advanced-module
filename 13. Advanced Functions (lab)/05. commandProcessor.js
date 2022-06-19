@@ -17,13 +17,12 @@ function solution() {
         console.log(state);
     }
 
-    let result = {
+    return {
         append,
         removeStart,
         removeEnd,
         print
     }
-    return result;
 }
 
 
