@@ -6,7 +6,7 @@ function solution() {
     }
 
     function removeStart(n) {
-        state = state.slice(n); // from n to the end of the string
+        state = state.slice(n); // from 0 to n - for example from 0 to 3 (3 is not included)
     }
 
     function removeEnd(n) {
@@ -17,11 +17,17 @@ function solution() {
         console.log(state);
     }
 
-    append('hello');
-    append('again');
-    removeStart(3);
-    removeEnd(4);
-    print();
+    let result = {
+        append,
+        removeStart,
+        removeEnd,
+        print
+    }
+    return result;
 }
 
-solution();
+
+const createProcessor = solution();
+
+createProcessor.append('hello');
+createProcessor.print();
