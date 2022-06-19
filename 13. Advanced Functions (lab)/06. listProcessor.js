@@ -17,7 +17,7 @@ function listProcessor(inputArr) {
         result.push(string);
     }
 
-    function remove() {
+    function remove(string) {
         for (let index = 0; index < result.length; index++) {
             if (result[index] == string) {
                 result.splice(index, 1);
