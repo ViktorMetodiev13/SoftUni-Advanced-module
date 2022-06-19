@@ -1,9 +1,9 @@
 function solution(number) {
-    function add(newNumber) {
-        return Number(number) + Number(newNumber);
+    function resuilt(newNumber) {
+        return number + newNumber;
     };
 
-    return add;
+    return resuilt;
 }
 
 let add5 = solution(5);
