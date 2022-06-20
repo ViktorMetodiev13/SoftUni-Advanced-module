@@ -2,7 +2,7 @@ function solution(input) {
     const recipes = {
         apple: { carbohydrate: 1, flavour: 2 },
         lemonade: { carbohydrate: 10, flavour: 20 },
-        burger: { carbohydrate: 10, fat: 7, flavour: 20 },
+        burger: { carbohydrate: 5, fat: 7, flavour: 3 },
         eggs: { protein: 5, fat: 1, flavour: 1},
         turkey: { protein: 10, carbohydrate: 10, fat: 10, flavour: 10}
     };
@@ -24,7 +24,8 @@ function solution(input) {
 
     function manager(line) {
         let [command, param, qty] = line.split(' ');
-        return commands[command](param, qty);
+        const fn = commands[command];
+        return fn(param, qty);
     }
 
     function restock(type, qty) {
@@ -37,7 +38,8 @@ function solution(input) {
         const recipe = Object.entries(recipes[recipeAsString]);
 
         recipe.forEach(ingredient => ingredient[1] *= quantity);
-        for (const [ingredient, required] of recipe) {
+
+        for (let [ingredient, required] of recipe) {
             if (stock[ingredient] < required) {
                 return `Error: not enough ${ingredient} in stock`;
             }
@@ -48,18 +50,17 @@ function solution(input) {
     }
 
     function report() {
-        return `proteins=${stock.protein} carbohydrates=${stock.carbohydrate} fat=${stock.fat} flavour=${stock.flavour}`;
+        return `protein=${stock.protein} carbohydrate=${stock.carbohydrate} fat=${stock.fat} flavour=${stock.flavour}`;
     }
 
-     
 }
 
 let manager = solution();
 console.log(manager("restock flavour 50")); 
 console.log(manager("prepare lemonade 4"));  
-// console.log (manager ("restock carbohydrate 10")); 
-// console.log (manager ("restock flavour 10")); 
-// console.log (manager ("prepare apple 1")); 
-// console.log (manager ("restock fat 10")); 
-// console.log (manager ("prepare burger 1")); 
-// console.log (manager ("report")); 
+console.log (manager ("restock carbohydrate 10")); 
+console.log (manager ("restock flavour 10")); 
+console.log (manager ("prepare apple 1")); 
+console.log (manager ("restock fat 10")); 
+console.log (manager ("prepare burger 1")); 
+console.log (manager ("report")); 
