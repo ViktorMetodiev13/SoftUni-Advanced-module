@@ -1,15 +1,14 @@
 function getFibonator() {
-    let fibonacciArr = [0, 1,]
-    function fib(arr) {
-        arr = fibonacciArr;
-        let num1 = arr.slice(-1);
-        let num2 = fibonaarrcciArr.slice(-2);
-        let newNum = num1 + num2;
-        fibonacciArr.push(newNum);
-        return fibonacciArr.slice(-1);
-    }
+    let prev = 0;
+    let curr = 1;
     
-    return fib;
+    return () => {
+        const next = prev + curr;
+        prev = curr;
+        curr = next;
+        
+        return curr;
+    };
 }
 
 let fib = getFibonator();
