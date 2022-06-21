@@ -1,5 +1,10 @@
-sortArray = (x, y) => x.sort((a,b) => (y == 'asc' ? a - b : b - a));
+// it('not correct input type', () => {
+    //     expect(isSymmetric(['1', 2, 3])).to.be.false;
+    //     expect(isSymmetric([1, '2', 3])).to.be.false;
+    //     expect(isSymmetric([1, 2, '3'])).to.be.false;
+    // });
 
 
-console.log(sortArray([14, 7, 17, 6, 8], 'asc'));
-console.log(sortArray([14, 7, 17, 6, 8], 'desc'));
+    // it('input is array', () => {
+    //     expect(isSymmetric(typeof a === Array.isArray(a))).to.be.true;
+    // });

@@ -1,8 +1,3 @@
-let rations = {
-    day: 1,
-    hours: 24,
-    minutes: 1440,
-    seconds: 86400
-}
+let arr = [1, 2, 3];
 
-console.log(rations.hours);
+console.log(isArray(arr));
