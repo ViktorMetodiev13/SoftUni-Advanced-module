@@ -4,14 +4,14 @@ class Circle {
     }
 
     get diameter() {
-
+        return this.radius * 2;
     }
 
     set diameter(value) {
-        
+        this.radius = value * 2;
     }
 
-    arae(radius) {
-        return ``
+    get area() {
+        return this.radius ** 2 * Math.PI;
     }
 }
