@@ -28,28 +28,78 @@ class SmartHike {
         }
 
         let neededResources = time * 10;
-        if (this.resourses - neededResources < 0) {
+        this.resourses -= neededResources;
+        if (this.resourses < 0) {
             return "You don't have enough resources to complete the hike";
         }
 
-        this.resourses -= neededResources;
         let currectHike = { peak, time, difficultyLevel };
         this.listOfHikes.push(currectHike);
 
-        return `You hiked ${peak} peak for ${time} hours and you have ${this.resources}% resources left`;
+        return `You hiked ${peak} peak for ${time} hours and you have ${this.resourses}% resources left`;
     }
 
     rest(time) {
-        let newPower = time * 10;
-        if (this.resourses + newPower >= 100) {
+        let newRecourses = time * 10;
+        this.resourses += newRecourses;
+        if (this.resourses >= 100) {
             this.resourses = 100;
             return `Your resources are fully recharged. Time for hiking!`;
-        } else {
-            return `You have rested for ${time} hours and gained ${time * 10}% resources`;
         }
+
+        return `You have rested for ${time} hours and gained ${time * 10}% resources`;
     }
 
     showRecord(criteria) {
+        if (this.listOfHikes.length < 0) {
+            return `${this.username} has not done any hiking yet`;
+        }
 
+        if (criteria == 'hard') {
+            if (this.listOfHikes.filter(x => x.difficultyLevel == criteria).length < 0) {
+                return `${this.username} has not done any ${criteria} hiking yet`
+            }
+
+            let listOfHardOnly = this.listOfHikes.filter(x => x.difficultyLevel == 'hard');
+            let listOfOnlyValues = listOfHardOnly.filter(x => x.time);
+            let lowestNum = Math.min(listOfOnlyValues);
+
+            for (let el of this.listOfHikes) {
+                if (el.time == lowestNum) {
+                    return `${this.username}'s best ${criteria} hike is ${this.peak} peak, for ${this.time} hours`
+                }
+            }
+
+        } else if (criteria == 'easy') {
+            let newList = [];
+            for (const el of this.listOfHikes) {
+                if (el.difficultyLevel == criteria) {
+                    newList.push(el);
+                }
+            }
+
+            if (newList.length < 0) {
+                return `${this.username} has not done any ${criteria} hiking yet`;
+            }
+
+            let listOfHardOnly = this.listOfHikes.filter(x => x.difficultyLevel == 'easy');
+            let listOfOnlyValues = listOfHardOnly.filter(x => x.time);
+            let lowestNum = Math.min(listOfOnlyValues);
+
+            for (let el of this.listOfHikes) {
+                if (el.time == lowestNum) {
+                    return `${this.username}'s best ${criteria} hike is ${this.peak} peak, for ${this.time} hours`
+                }
+            }
+
+        } else if (criteria == 'all') {
+            let result = 'All hiking records:\n';
+            for (let el of this.listOfHikes) {
+                result += `${this.username} hiked ${el.peak} for ${el.time} hours\n`;
+
+            }
+
+            return result;
+        }
     }
 }
