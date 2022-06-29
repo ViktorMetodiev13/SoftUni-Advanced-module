@@ -1,9 +1,5 @@
-function circleArea(arg1) {
-    if (typeof(arg1) == 'number') {
-        console.log((arg1 * arg1 * Math.PI).toFixed(2));
-    } else {
-        console.log(`We can not calculate the circle area, because we receive a ${typeof(arg1)}.`);
-    }
+function calculateCircle(r) {
+    return r ** 2 * Math.PI;
 }
-circleArea(5);
-circleArea('name');
+
+console.log(calculateCircle(2));
