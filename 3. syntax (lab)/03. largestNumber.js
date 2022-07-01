@@ -1,10 +1,6 @@
 function largestNumber(arg1, arg2, arg3) {
-    if (arg1 >= arg2 && arg1 >= arg3) {
-        console.log(`The largest number is ${arg1}.`);
-    } else if (arg2 >= arg1 && arg2 >= arg3) {
-        console.log(`The largest number is ${arg2}.`);
-    } else {
-        console.log(`The largest number is ${arg3}.`);
-    }
+    let arr = [arg1, arg2, arg3];
+
+    console.log(Math.min(arr));
 }
 largestNumber(50, 30, 16);
